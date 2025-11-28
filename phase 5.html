@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phase 1 — Revolusi Industri (Creative)</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --soft-brown: #8b6f47;
+      --brown-muted: #b5997b;
+      --ink: #2b2622;
+      --card: #fffdf8;
+    }
+
+    html, body{
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-image: url('./images/bg\ nyoba.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: "Poppins", sans-serif;
+      color: var(--ink);
+    }
+
+    body{ padding-bottom: 80px; }
+
+    /* NAV */
+    .navbar { background:#ffffff; }
+    .nav-link{ font-weight:600; }
+
+    /* HERO */
+    .hero {
+      max-width:1100px;
+      margin:90px auto 36px;
+      padding:28px;
+      border-radius:16px;
+      box-shadow:0 14px 40px rgba(139,111,71,0.08);
+      background: rgba(255,255,255,0.35);
+      backdrop-filter: blur(6px);
+      border:2px solid rgba(139,111,71,0.4);
+    }
+
+    /* Shapes */
+    .shape-polygon { clip-path: polygon(0 6%, 100% 0, 100% 94%, 0% 100%); border-radius:12px; overflow:hidden; }
+    .shape-oval { border-radius:50%; overflow:hidden; width:160px; height:160px; display:inline-block; box-shadow:0 10px 30px rgba(139,111,71,0.08); }
+    .shape-rounded{ border-radius:18px; overflow:hidden; }
+
+    /* Section title */
+    .section-title{
+      font-weight:700;
+      text-transform:uppercase;
+      color:var(--soft-brown);
+      letter-spacing:.9px;
+      margin-bottom:16px;
+      font-size:.9rem;
+    }
+
+    /* Wrapper */
+.door-wrapper {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+/* Judul */
+.door-title {
+    font-size: 2.4rem;
+    color: #4b3627;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+/* Pintu Container */
+.door-container {
+    width: 750px;
+    height: 420px;
+    margin: auto;
+    position: relative;
+    perspective: 1200px;
+}
+
+/* Dua daun pintu */
+.door {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(#b28b64, #8f6a47);
+    border: 4px solid #5c4432;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.4);
+    transition: transform 1.4s ease-in-out;
+    transform-origin: center;
+    z-index: 3;
+}
+
+/* Kiri & kanan */
+.door-left {
+    left: 0;
+    transform-origin: left;
+}
+
+.door-right {
+    right: 0;
+    transform-origin: right;
+}
+
+/* Konten di dalam */
+.door-content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.85);
+    border-radius: 12px;
+    border: 3px solid #c8a27b;
+    padding: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+.door-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.door-content img {
+    width: 230px;
+    height: auto;
+    border-radius: 14px;
+    border: 3px solid #c19a72;
+    margin-bottom: 20px;
+}
+
+.door-content h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #5e422f;
+    margin-bottom: 15px;
+}
+
+.door-content ul {
+    list-style: none;
+    padding: 0;
+    color: #6e5644;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.door-content ul li::before {
+    content: "• ";
+    color: var(--soft-brown);
+    font-weight: bold;
+}
+
+
+/* Tombol buka pintu */
+.door-btn {
+    margin-top: 25px;
+    background: #8f6a47;
+    border: none;
+    padding: 12px 26px;
+    color: white;
+    font-size: 1.05rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.door-btn:hover {
+    background: #b28b64;
+}
+
+/* Saat pintu terbuka */
+.open .door-left {
+    transform: rotateY(-95deg);
+}
+
+.open .door-right {
+    transform: rotateY(95deg);
+}
+
+.open .door-content {
+    opacity: 1;
+}
+
+.sda-box {
+  width: 100%;
+  max-width: 650px;
+  margin: 20px auto;
+}
+
+.sda-toggle {
+  width: 100%;
+  background: linear-gradient(180deg, var(--soft-brown), var(--brown-muted));
+  color: white;
+  padding: 18px 22px;
+  font-size: 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: left;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.sda-toggle:hover {
+  filter: brightness(1.1);
+}
+
+.sda-content {
+  max-height: 0;
+  overflow: hidden;
+  background: #fff7ed;
+  border-radius: 0 0 12px 12px;
+  transition: max-height 0.4s ease;
+  padding: 0 20px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+
+.sda-item {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f1e3d3;
+}
+
+.sda-item:last-child {
+  border-bottom: none;
+}
+
+.sda-item img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.sda-item p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.conflict-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  color: var(--brown-muted);
+}
+
+.conflict-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.conflict-box {
+  width: 300px;
+  background: #fff;
+  border-radius: 16px;
+  border: 3px solid var(--brown-muted); 
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.conflict-box:hover {
+  transform: translateY(-6px);
+}
+
+.conflict-img-wrapper {
+  width: 100%;
+  height: 170px;
+  border-bottom: 3px solid var(--brown-muted); 
+  overflow: hidden;
+}
+
+.conflict-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.conflict-desc {
+  padding: 18px 20px;
+  color: #3a2d2d;
+}
+    html, body {
+  font-family: "Poppins", sans-serif;
+}
+
+    .section-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+    .panel {
+        width: 100%;
+        max-width: 850px;
+        margin: 20px auto;
+        display: flex;
+        border: 3px solid #5a3e2b;
+        border-radius: 14px;
+        overflow: hidden;
+        cursor: pointer;
+        background: white;
+        transition: 0.3s ease;
+    }
+
+    .panel:hover {
+        transform: scale(1.01);
+    }
+
+    .panel-img {
+        width: 45%;
+        min-height: 220px;
+        background-size: cover;
+        background-position: center;
+        border-right: 3px solid #5a3e2b;
+    }
+
+    .panel-right {
+        width: 55%;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .panel-title {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 12px;
+        color: #5a3e2b;
+    }
+
+    .panel-content {
+        display: none;
+        font-size: 17px;
+        line-height: 1.5;
+        color: #3b2a1e;
+    }
+
+    /* Buka */
+    .open .panel-content {
+        display: block;
+        animation: fade 0.25s ease-in-out;
+    }
+
+    @keyframes fade {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
+     footer {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="./images/logoserviam.png" alt="logo" width="30" height="30" class="me-2">
+    <b>NOIR.</b>
+</a>
+
+
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+
+        <!-- Products Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link fw-semibold dropdown-toggle" href="#" data-bs-toggle="dropdown">Highlight</a>
+
+          <ul class="dropdown-menu shadow-sm">
+            <li><a class="dropdown-item" href="./Phase 1.html">Phase 1</a></li>
+            <li><a class="dropdown-item" href="./phase 2.html">Phase 2</a></li>
+            <li><a class="dropdown-item" href="./phase 3.html">Phase 3</a></li>
+            <li><a class="dropdown-item" href="./phase 4.html">Phase 4</a></li>
+            <li><a class="dropdown-item" href="./phase 5.html">Phase 5</a></li>
+            <li><a class="dropdown-item" href="./phase 6.html">Phase 6</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link fw-semibold" href="./our creation.html">Our Creation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero" style="margin-top:76px;">
+  <div class="row g-3 align-items-center">
+    
+    <!-- KIRI -->
+    <div class="col-md-7">
+      <h1><span style="color:var(--soft-brown)"><b>Pertumbuhan Ekonomi vs Kelestarian SDA di Indonesia</b></span></h1>
+      <p class="lead fw-semibold">Indonesia menghadapi dilema antara memajukan ekonomi dan menjaga alamnya, dan ketidakseimbangan di antara keduanya dapat memicu kerusakan jangka panjang.</p>
+
+      <div class="d-flex gap-2 align-items-center mt-3">
+        <a href="#phase1" class="btn btn-primary"
+           style="background:linear-gradient(180deg,var(--soft-brown),var(--brown-muted)); border:none;">
+           Pelajari Phase Five
+        </a>
+      </div>
+    </div>
+    <div class="col-md-5 text-center">
+      <div class="shape-polygon">
+        <img src="./images/heropage phase 5.jpg" style="width:100%;">
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+
+<main class="container" style="max-width:1100px; margin-top:28px;"id="phase1">
+<!--kenapa ekonomi butuh sda-->
+<section id="door-section" class="door-wrapper">
+
+    <h2 class="door-title">Kenapa Ekonomi Membutuhkan SDA?</h2>
+
+    <div class="door-container">
+
+        <!-- Dua pintu -->
+        <div class="door door-left"></div>
+        <div class="door door-right"></div>
+
+        <!-- Isi di dalam pintu -->
+     <div class="door-content">
+    <img src="./images/pintu.jpeg" alt="">
+    
+    <h3><b>Ketergantungan Ekonomi pada SDA</b></h3>
+
+    <ul>
+      <p style="text-align: justify;">
+        <li>Dapat menjadi komoditas ekspor yang memperkuat ekonomi negara.</li>
+        <li>Menjadi bahan baku untuk produksi barang industri dan pabrik.</li>
+        <li>Pengekstrakan sumber daya alam menjadi lapangan kerja banyak orang.</li>
+        <li>Sumber daya alam adalah sebagai sumber tenaga bagi banyak cabang dan aktivitas ekonomi.</li>
+      </p>
+    </ul>
+</div>
+
+
+    </div>
+
+    <button class="door-btn">Buka Pintu</button>
+
+</section>
+
+<!--kenapa sda terbatas-->
+    <div class="sda-box">
+  <button class="sda-toggle">
+    Kenapa SDA Terbatas?
+  </button>
+
+  <div class="sda-content">
+    <div class="sda-item">
+      <img src="./images/sda sulit terbentuk.jpg" alt="">
+      <p>SDA membutuhkan waktu sangat lama untuk terbentuk.</p>
+    </div>
+
+    <div class="sda-item">
+      <img src="./images/eating.jpg" alt="">
+      <p>Kecepatan konsumsi manusia lebih cepat daripada regenerasi SDA.</p>
+    </div>
+
+    <div class="sda-item">
+      <img src="./images/wilayah ketiompagan.jpg" alt="">
+      <p>SDA tidak merata di setiap wilayah sehingga jumlahnya terbatas.</p>
+    </div>
+
+    <div class="sda-item">
+      <img src="./images/sda 3.jpg" alt="">
+      <p>Eksploitasi berlebihan membuat SDA cepat menipis.</p>
+    </div>
+
+    <div class="sda-item">
+      <img src="./images/sungai jelek.jpg" alt="">
+      <p>Pencemaran menyebabkan berkurangnya SDA yang layak digunakan.</p>
+    </div>
+  </div>
+</div>
+
+<h2 class="conflict-title"><span style="color:var(--soft-brown)"><b>Contoh Konflik Nyata</b></h2>
+
+<div class="conflict-container">
+
+  <!-- Sawit -->
+  <div class="conflict-box">
+    <div class="conflict-img-wrapper">
+      <img src="./images/sawit.jpeg" alt="">
+    </div>
+    <div class="conflict-desc">
+      <h4 style="color:var(--soft-brown); font-weight:700;">Konflik Sawit</h4>
+      Ekspansi perkebunan sawit memicu perebutan lahan dan kerusakan lingkungan.
+    </div>
+  </div>
+
+  <!-- Tambang -->
+  <div class="conflict-box">
+    <div class="conflict-img-wrapper">
+      <img src="./images/tambang.jpeg" alt="">
+    </div>
+    <div class="conflict-desc">
+      <h4 style="color:var(--soft-brown); font-weight:700;">Konflik Tambang</h4>
+      Kegiatan tambang sering memunculkan pencemaran dan kerusakan lingkungan sekitar untuk masyarakat sekitar.
+    </div>
+  </div>
+
+  <!-- Energi -->
+  <div class="conflict-box">
+    <div class="conflict-img-wrapper">
+      <img src="./images/energi.jpeg" alt="">
+    </div>
+    <div class="conflict-desc">
+      <h4 style="color:var(--soft-brown); font-weight:700;">Konflik Energi</h4>
+      Pembangunan infrastruktur energi memicu pertentangan dengan keberlangsungan lingkungan dan hidup sekitar.
+    </div>
+  </div>
+
+</div>
+  </div>
+</section>
+
+<!--dilema-->
+<h4 class="section-title"><span style="color:var(--soft-brown)">DILEMA: INGIN MAJU, TAPI BUMI RUSAK</span></h4>
+
+<!-- PRO -->
+<div class="panel" onclick="togglePanel(this)">
+    <div class="panel-img" style="background-image:url('./images/pro.jpeg');"></div>
+    <div class="panel-right">
+        <div class="panel-title">Pro - Pertumbuhan & Industrialisasi lebih lanjut</div>
+        <div class="panel-content">
+            <ul>
+                <li>Urbanisasi mendorong pembangunan kota & pusat ekonomi baru.</li>
+                <li>Industrialisasi bisa memperkuat ekonomi nasional..</li>
+                <li>Produktivitas barang buatan tangan lebih efisien dan meningkat.</li>
+                <li>Penyerapan tenaga kerja meningkat jika industri bertambah kualitas dan juga kuantitas.</li>
+                <li>Produk lokal hasil industri dengan kualitas tinggi dapat menjadi komoditas ekspor dan memperkuat ekonomi negara.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- KONTRA -->
+<div class="panel" onclick="togglePanel(this)">
+    <div class="panel-img" style="background-image:url('./images/kontra.jpeg');"></div>
+    <div class="panel-right">
+        <div class="panel-title">Kontra - Lahan Agraris Menipis</div>
+        <div class="panel-content">
+            <ul>
+                <li>Berisiko konflik lahan, ketidakstabilan infrastruktur dan harga tanah menjadi sangat tinggi.</li>
+                <li>Urbanisasi semakin cepat dan membuat tekanan pada ruang dan makhluk hidup lainnya.</li>
+                <li>Emisi karbon akibat industri akan meningkat secara drastis.</li>
+                <li>Industrialisasi negara yang belum siap beradaptasi, karena kualitas produksi dan teknologi yang masih tertingga.l</li>
+                <li>Indonesia menjadi ketergantungan pada negara lain untuk impor bahan agraris karena produksi dalam negeri semakin tidak mencukupi.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+  </div>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="text-center mt-5" style="padding:28px 0; background:linear-gradient(180deg,var(--soft-brown),var(--brown-muted)); color:white;">
+  <small>© 2025 NOIR. — All Rights Reserved</small>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+const doorContainer = document.querySelector(".door-container");
+const doorBtn = document.querySelector(".door-btn");
+
+doorBtn.addEventListener("click", () => {
+    doorContainer.classList.toggle("open");
+
+    if (doorContainer.classList.contains("open")) {
+        doorBtn.textContent = "Tutup Pintu";
+    } else {
+        doorBtn.textContent = "Buka Pintu";
+    }
+});
+
+const toggle = document.querySelector(".sda-toggle");
+const content = document.querySelector(".sda-content");
+
+toggle.addEventListener("click", () => {
+  if (content.style.maxHeight) {
+    content.style.maxHeight = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+  }
+});
+
+function togglePanel(panel){
+    panel.classList.toggle("open");
+}
+</script>
+
+</script>
+
+</body>
+</html>

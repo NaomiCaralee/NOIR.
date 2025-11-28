@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phase 1 — Revolusi Industri (Creative)</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --soft-brown: #8b6f47;
+      --brown-muted: #b5997b;
+      --ink: #2b2622;
+      --card: #fffdf8;
+    }
+
+    html{
+      scroll-behavior: smooth;  
+    }
+
+    html, body{
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-image: url('./images/bg\ nyoba.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: "Poppins";
+      color: var(--ink);
+    }
+
+    body{ padding-bottom: 80px; }
+
+    /* NAV */
+    .navbar { background:#ffffff; }
+    .nav-link{ font-weight:600; }
+
+    /* HERO */
+    .hero {
+      max-width:1100px;
+      margin:90px auto 36px;
+      padding:28px;
+      border-radius:16px;
+      box-shadow:0 14px 40px rgba(139,111,71,0.08);
+      background: rgba(255,255,255,0.35);
+      backdrop-filter: blur(6px);
+      border:2px solid rgba(139,111,71,0.4);
+    }
+
+    /* Shapes */
+    .shape-polygon { clip-path: polygon(0 6%, 100% 0, 100% 94%, 0% 100%); border-radius:12px; overflow:hidden; }
+    .shape-oval { border-radius:50%; overflow:hidden; width:160px; height:160px; display:inline-block; box-shadow:0 10px 30px rgba(139,111,71,0.08); }
+    .shape-rounded{ border-radius:18px; overflow:hidden; }
+
+    /* Section title */
+    .section-title{
+      font-weight:700;
+      text-transform:uppercase;
+      color:var(--soft-brown);
+      letter-spacing:.9px;
+      margin-bottom:16px;
+      font-size:.9rem;
+    }
+
+    /* Cards */
+    .info-card{
+      background:var(--card);
+      border-radius:12px;
+      padding:18px;
+      box-shadow:0 12px 28px rgba(139,111,71,0.06);
+    }
+
+    .cause-card{
+      border-radius:12px;
+      padding:14px;
+      background:#fff;
+      border:1px solid rgba(43,38,34,0.06);
+      transition:.22s;
+      text-align:center;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-start;
+      height:100%;
+    }
+    .cause-card:hover{
+      transform:translateY(-6px);
+      box-shadow:0 20px 40px rgba(43,38,34,0.06);
+    }
+
+    .cause-img{ width:58px; height:58px; margin:0 auto 10px; border-radius:12px; overflow:hidden; }
+    .cause-img img{ width:100%; height:100%; object-fit:cover; }
+
+    /* FLIPCARD*/
+    .flip-card{
+      perspective:900px;
+      width:100%;
+      aspect-ratio: 1 / 1;
+    }
+
+    .flip-card-inner{
+      width:100%;
+      height:100%;
+      position:relative;
+      transition:0.6s;
+      transform-style:preserve-3d;
+    }
+
+    .flip-card:hover .flip-card-inner{
+      transform:rotateY(180deg);
+    }
+
+    .flip-card-front, 
+    .flip-card-back{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      backface-visibility:hidden;
+      border-radius:12px;
+      overflow:hidden;
+      padding:0;
+    }
+
+    .flip-card-front img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    .flip-card-back{
+      background:linear-gradient(180deg,var(--soft-brown),var(--brown-muted));
+      color:white;
+      padding:18px;
+      transform:rotateY(180deg);
+      text-align:center;
+      display:flex;
+      flex-direction: column;   
+      align-items:center;
+      justify-content:center;
+    }
+
+    .imp{ font-style:italic; color:var(--soft-brown); font-weight:600; }
+    .timeline-item{ margin-bottom:10px; }
+
+    .flex-info-cards{ display:flex; flex-wrap:wrap; gap:20px; }
+    .flex-info-cards > div{ flex:1; min-width:280px; display:flex; flex-direction:column; }
+    .flex-info-cards img.info-img { margin-top:12px; width:100%; height:auto; border-radius:12px; }
+
+.circle-btn {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  border: 4px solid var(--soft-brown);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.circle-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circle-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+  </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="./images/logoserviam.png" alt="logo" width="30" height="30" class="me-2">
+    <b>NOIR.</b>
+</a>
+
+
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+
+        <!-- Products Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link fw-semibold dropdown-toggle" href="#" data-bs-toggle="dropdown">Highlight</a>
+
+          <ul class="dropdown-menu shadow-sm">
+            <li><a class="dropdown-item" href="./Phase 1.html">Phase 1</a></li>
+            <li><a class="dropdown-item" href="./phase 2.html">Phase 2</a></li>
+            <li><a class="dropdown-item" href="./phase 3.html">Phase 3</a></li>
+            <li><a class="dropdown-item" href="./phase 4.html">Phase 4</a></li>
+            <li><a class="dropdown-item" href="./phase 5.html">Phase 5</a></li>
+            <li><a class="dropdown-item" href="./phase 6.html">Phase 6</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link fw-semibold" href="./our creation.html">Our Creation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero" style="margin-top:76px;">
+  <div class="row g-3 align-items-center">
+    <div class="col-md-7">
+      <h1> <span style="color:var(--soft-brown)"><b>Perkembangan Revolusi Industri 1.0 – 4.0</b></span></h1>
+      <p class="lead fw-semibold">Dari mesin uap, listrik, komputer, hingga AI. Inilah evolusi industri yang membentuk dunia hari ini.</p>
+
+      <div class="d-flex gap-2 align-items-center mt-3">
+        <a href="#learn-phase2" class="btn btn-primary" style="background:linear-gradient(180deg,var(--soft-brown),var(--brown-muted)); border:none;">
+          Pelajari Phase Two
+        </a>
+      </div>
+
+    </div>
+
+    <div class="col-md-5 text-center">
+      <div class="shape-polygon">
+        <img src="./images/hero page phase 2.jpg" style="width:100%;">
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<main class="container" style="max-width:1100px; margin-top:28px;">
+
+<!-- LINGKARAN -->
+<section class="py-5" id="learn-phase2">  
+  <div class="container text-center">
+    <h2 class="section-title mb-4">Era <span class="fst-italic">1.0 → 2.0 → 3.0 → 4.0</span></h2>
+    <div class="d-flex justify-content-center gap-4 flex-wrap">
+
+      <div class="circle-btn" data-bs-toggle="modal" data-bs-target="#era1">
+        <img src="./images/lingkaran 1.0.jpeg">
+      </div>
+
+      <div class="circle-btn" data-bs-toggle="modal" data-bs-target="#era2">
+        <img src="./images/lingkaran 2.jpeg">
+      </div>
+
+      <div class="circle-btn" data-bs-toggle="modal" data-bs-target="#era3">
+        <img src="./images/lingkaran 3.jpeg">
+      </div>
+
+      <div class="circle-btn" data-bs-toggle="modal" data-bs-target="#era4">
+        <img src="./images/lingakaran 4.jpeg">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- INFO -->
+<div class="modal fade" id="era1"><div class="modal-dialog modal-lg"><div class="modal-content p-4">
+  <h3 class="fw-bold">Revolusi Industri <span class="fst-italic">1.0</span></h3>
+  <p><span class="imp">Revolusi Industri 1.0</span> di Indonesia terjadi pada sekitar tahun 1800-1920, dan memiliki kaitannya secara erat dengan kolonialisme Belanda. Walaupun Indonesia tidak mengalami revolusi industri secara mandiri, Indonesia tetap merupakan salah satu negara di Asia Tenggara yang mengalaminya paling cepat, karena pemerintah Hindia Belanda yang membawa mesin uap, pabrik mekanis, serta infrastruktur transportasi modern untuk memaksimalkan keuntungan ekonomi. Perkebunan besar, terutama gula, kopi, tembakau dan karet mengadopsi mesin pengolahan berbasis uap yang menurunkan biaya tenaga kerja. Kereta api uap, kapal uap dan mesin-mesin berat mempercepat pengangkutan komoditas dari pedalaman ke pelabuhan, sehingga membuat kolonialisme jauh lebih efisien dan terstruktur. 
+Perkembangan ini mebuat pola produksi di Nusantara berubah dari kerja manual menuju industrialisasi awal. Relasi manusia juga bergeser, buruh pribumi mulai kerja di perkebunan dengan mesin-mesin uap yang lebih efisien, bengkel kereta dan yang paling banyak yaitu pabrik gula. Industrialisasi dengan sumber daya alam tetap memiliki hubungan, yaitu sebagai bahan bakar mesin uap dan komoditas ekspor yang diolah dengan teknologi baru. Meski bersifat eksploitatif dan berujung tidak manusiawi, <span class="imp">Hindia Belanda</span> telah berjasa membawa sistem industri global untuk pertama kali ke Indonesia. 
+</p>
+</div></div></div>
+
+<div class="modal fade" id="era2"><div class="modal-dialog modal-lg"><div class="modal-content p-4">
+  <h3 class="fw-bold">Revolusi Industri <span class="fst-italic">2.0</span></h3>
+  <p><span class="imp">Revolusi Industri 2.0,</span> berlangsung pada sekitar tahun 1920-1970, ditandai dengan masuknya listrk, mesin berbahan bakar minyak dan produksi massal di pabrik. Pada masa akhir kolonial dan awal kemerdekaan, banyak fasilitas industri listrik seperti pembangkit tenaga diesel dibangun untuk mendukung pabrik gula, pabrik semen dan industri yang berfokus pada logam. Setelah Indonesia merdeka, program <span class="imp">industrialisasi</span> nasional di bawah pemerintahan Soekarno yang dilanjutkan pada masa orde Baru mendorong perkembangan pabrik tekstil, makanan-minuman, otomotif dan manufaktur bahan bangunan. 
+Kemajuan Indonesia pada fase ini terjadi karena kombinasi faktor politik dan ekonomi. Meskipun, perkembangan Revolusi Industri 2.0 di Indonesia terkesan lebih pelan karena kondisi ekonomi Indonesia yang baru merdeka yang kurang baik.
+</p>
+</div></div></div>
+
+<div class="modal fade" id="era3"><div class="modal-dialog modal-lg"><div class="modal-content p-4">
+  <h3 class="fw-bold">Revolusi Industri <span class="fst-italic">3.0</span></h3>
+  <p><span class="imp">Revolusi Industri 3.0</span> di Indonesia yang mulai pada sekitar tahun 1980-2010, ditandai dengan masuknya komputer, mesin numerik (CNC), robotik sederhana, elektronik, komunikasi digital dan otomatisasi. Indonesia mulai mengadopsi teknologi ini di sektor manufaktur pada 1980-an, terutama industri elektronik di Batam, Cikarang, otomotif di Karawang dan Bekasi, dan perbankan. Komputerisasi juga masuk ke perkantoran, pendidikan, birokrasi dan rumah sakit. Telekomnikasi berkembang cepat dengan hadirnya satelit Palapa, jaringan telepon seluler dan internet pada 1990. 
+Kemajuan Indonesia dalam fase ini sangat dipengaruhi <span class="imp">globalisasi.</span> Perdagangan Internasional dengan Jepang, Korea Selatan, Singapura dan negara lainnya membawa teknologi manufaktur modern dan sistem produksi yang menggunakan komputer serta robot dasar. Sistem pendidikan juga berkembang pesat, tenaga kerja Indonesia mulai terlibat dalam proses produksi massal di pabrik-pabrik yang berbeda. 
+</p>
+</div></div></div>
+
+<div class="modal fade" id="era4"><div class="modal-dialog modal-lg"><div class="modal-content p-4">
+  <h3 class="fw-bold">Revolusi Industri <span class="fst-italic">4.0</span></h3>
+  <p>Revolusi Industri 4.0 di Indonesia, pada sekitar tahun 2015 sampai dengan sekarang, ditandai dengan integrasi internet dengan kecepatan tinggi, Artificial Intelligence, data analytics digital, cloud computing, Internet of Things dan ekonomi platform. Perubahan besar terjadi pada perdagangan, transportasi, keuangan, manufaktur, pertanian dan pemerintahan. Masyarakat beralih ke layanan digital dalam aktivitas sehari-hari, dan perusahaan mulai bergantung pada data sebagai aset ekonomi baru. Indonesia juga menjadi salah satu ekosistem digital terbesar di Asia Tenggara.</p>
+</div></div></div>
+
+<style>
+  /* CAROUSEL CARD STYLE */
+  .brown-carousel .carousel-control-prev-icon,
+  .brown-carousel .carousel-control-next-icon {
+    filter: invert(43%) sepia(23%) saturate(630%) hue-rotate(350deg) brightness(90%) contrast(90%);
+  }
+
+  .brown-card {
+    background: #fffdf8;
+    border: 1px solid var(--brown-muted);
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(139,111,71,0.10);
+    overflow: hidden;
+  }
+
+  .brown-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .brown-card img {
+  height: 260px;       
+  object-fit: cover;  
+}
+
+
+  .carousel-inner { border-radius: 16px; }
+</style>
+
+
+<section class="py-5">
+  <h2 class="section-title mb-4 text-center">Perubahan Cara Produksi, Konsumsi, dan Teknologi</h2>
+
+  <div id="brownCarousel" class="carousel slide brown-carousel" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+
+      <!-- carousel produksi -->
+      <div class="carousel-item active">
+        <div class="row g-0 brown-card">
+          
+          <div class="col-md-5">
+            <img src="./images/carousel produksi.jpeg" alt="">
+          </div>
+
+          <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
+            <h4 class="fw-bold">Perubahan Cara Produksi</h4>
+            <p class="mb-0">Cara produksi bergerak dari kerja manual menjadi proses yang makin otomatis dan berbasis data. Awalnya barang dibuat dengan tangan dan alat sederhana, lalu pabrik mulai memakai mesin, kemudian komputer mengendalikan produksi, dan sekarang mesin dapat menyesuaikan output berdasarkan data pasar secara real time. Produksi tidak lagi tetap dan lambat, tetapi cepat, fleksibel, dan terkoneksi satu sama lain.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- carousel konsumsi -->
+      <div class="carousel-item">
+        <div class="row g-0 brown-card">
+          
+          <div class="col-md-5">
+            <img src="./images/carousel konsumsi.jpeg" alt="">
+          </div>
+
+          <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
+            <h4 class="fw-bold">Perubahan Cara Konsumsi</h4>
+            <p class="mb-0">Kebiasaan konsumsi ikut berubah seiring kemajuan produksi. Dulu masyarakat hanya mengonsumsi barang lokal dalam jumlah terbatas, lalu produksi massal membuat barang murah dan mudah dijangkau. Kemudian hadir produk elektronik dan layanan modern, dan saat ini konsumsi lebih banyak bergerak ke arah digital belanja online, pembayaran digital, hiburan streaming, dan layanan berbasis aplikasi.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- carousel teknologi -->
+      <div class="carousel-item">
+        <div class="row g-0 brown-card">
+          
+          <div class="col-md-5">
+            <img src="./images/carousel teknologi.jpeg" alt="">
+          </div>
+
+          <div class="col-md-7 p-4 d-flex flex-column justify-content-center">
+            <h4 class="fw-bold">Perubahan Cara Teknologi</h4>
+            <p class="mb-0">Teknologi berkembang dari mesin mekanis sederhana menjadi sistem cerdas yang saling terhubung. Mesin uap digantikan listrik, lalu komputer mengambil alih fungsi pengendalian, dan kini AI, sensor, serta big data memungkinkan mesin membuat keputusan sendiri. Teknologi bukan lagi alat pendukung produksi, tetapi sudah menjadi pusat dari seluruh aktivitas ekonomi, sosial, dan industri.</p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- BUTTON PREV/NEXT -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#brownCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#brownCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+
+  </div>
+</section>
+
+
+<!-- FLIPCARD  -->
+<section class="py-5">
+<div class="container">
+<h2 class="section-title text-center mb-4">Semakin Meningkatnya Kebutuhan SDA di Tiap Era Revolusi Industri</h2>
+
+<div class="row g-4">
+
+<!-- era 1.0 -->
+<div class="col-md-6">
+<div class="flip-card">
+  <div class="flip-card-inner">
+
+    <div class="flip-card-front">
+      <img src="./images/flipcard 1 phase 2.jpg">
+    </div>
+
+    <div class="flip-card-back">
+       <h4 class="fw-bold"> Era Revolusi Industri 1.0</h4>
+       <p style="text-align: justify;">
+         Cara konsumsi masih terbatas dan lokal, tetapi masyarakat mulai mengenal barang yang diproduksi lebih cepat daripada kerja tangan. Teknologi di era ini masih mekanis, namun cukup untuk mengubah pola kerja masyarakat secara besar-besaran. Kebutuhan SDA meningkat terutama pada batubara sebagai bahan bakar utama mesin uap. Selain itu, hasil perkebunan dan tambang dieksploitasi lebih intensif untuk memasok industri. Meskipun skalanya belum sebesar era berikutnya, 1.0 memulai pola ketergantungan terhadap energi fosil dan produksi masif, sehingga membuka pintu bagi masalah lingkungan dan eksploitasi yang makin kompleks pada era selanjutnya.
+       </p>
+      
+     
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- era 2.0 -->
+<div class="col-md-6">
+<div class="flip-card">
+  <div class="flip-card-inner">
+
+    <div class="flip-card-front">
+      <img src="./images/flipcard phase 2 2.jpg">
+    </div>
+
+    <div class="flip-card-back">
+      <h4 class="fw-bold"> Era Revolusi Industri 2.0</h4>
+      <p style="text-align: justify;">
+        Konsumsi meningkat drastis karena barang menjadi lebih murah dan mudah didistribusikan ke berbagai wilayah. Teknologi berkembang dari mekanik menjadi elektroteknik. Dalam era ini, kebutuhan SDA bertambah luas. Minyak bumi, besi, baja, dan karet menjadi tulang punggung industri. Industri kendaraan bermotor, tekstil, dan manufaktur skala besar bergantung pada bahan mentah yang harus diambil dalam jumlah besar. Eskalasi kebutuhan energi dan logam menciptakan masalah baru seperti polusi, deforestasi, dan ketimpangan ekonomi dari daerah penghasil SDA, yang menjadi beban warisan bagi era-era berikutnya.
+      </p>
+      
+  
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- era 3.0 -->
+<div class="col-md-6">
+<div class="flip-card">
+  <div class="flip-card-inner">
+
+    <div class="flip-card-front">
+      <img src="./images/flipcard phase 2 3 .jpg">
+    </div>
+
+    <div class="flip-card-back">
+      <h4 class="fw-bold"> Era Revolusi Industri 3.0</h4>
+      <p style="text-align: justify;">
+        Memperkenalkan komputer, robotika dasar, dan otomatisasi. Produksi tidak hanya cepat, tetapi juga presisi.Kontrol mesin dilakukan dengan perangkat elektronik dan perangkat lunak. Konsumsi pun berubah barang elektronik, perangkat rumah tangga, dan teknologi komunikasi menjadi bagian dari kehidupan normal. Teknologi informasi mulai membentuk budaya baru, di mana data dan informasi menjadi sumber daya strategis.
+      </p>
+    </div>
+
+  </div>
+</div>
+</div>
+
+<!-- era 4.0 -->
+<div class="col-md-6">
+<div class="flip-card">
+  <div class="flip-card-inner">
+
+    <div class="flip-card-front">
+      <img src="./images/flipcard phase 2 4.jpg">
+    </div>
+
+    <div class="flip-card-back">
+      <h4 class="fw-bold"> Era Revolusi Industri 4.0</h4>
+      <p style="text-align: justify;">
+        Kebutuhan SDA semakin meluas dari energi besar untuk pusat data, logam baterai seperti litium dan kobalt, hingga infrastruktur jaringan global seperti server, fiber optik, dan satelit. Selain SDA fisik, “SDA digital” seperti data, bandwidth, dan kapasitas komputasi menjadi aset ekonomi. Karena itu, masalah modern menjadi lebih rumit—mulai dari privasi data, ketimpangan digital, beban energi untuk AI, hingga ketergantungan pada rantai pasok mineral global. Kebutuhan SDA menjadi lebih kompleks dibanding sebelumnya. Selain energi fosil, industri membutuhkan tembaga, nikel, silikon, emas, dan mineral langka untuk elektronik dan semikonduktor. Kebutuhan listrik meningkat tajam, dan infrastruktur telekomunikasi menambah penggunaan logam dan plastik industri. Kompleksitas ini membuat masalah teknologi tidak hanya soal lingkungan, tetapi juga soal ketergantungan pada mineral tertentu, e-waste, dan kompetisi global atas bahan baku strategis.
+      </p>
+    
+    </div>
+
+  </div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+
+
+  </div>
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="text-center mt-5" style="padding:28px 0; background:linear-gradient(180deg,var(--soft-brown),var(--brown-muted)); color:white;">
+  <small>© 2025 NOIR. — All Rights Reserved</small>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

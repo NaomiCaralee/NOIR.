@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phase 1 — Revolusi Industri (Creative)</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --soft-brown: #8b6f47;
+      --brown-muted: #b5997b;
+      --ink: #2b2622;
+      --card: #fffdf8;
+    }
+
+    html, body{
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-image: url('./images/bg\ nyoba.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: "Poppins";
+      color: var(--ink);
+    }
+
+
+    /* NAV */
+    .navbar { background:#ffffff; }
+    .nav-link{ font-weight:600; }
+
+    /* HERO */
+    .hero {
+      max-width:1100px;
+      margin:90px auto 36px;
+      padding:28px;
+      border-radius:16px;
+      box-shadow:0 14px 40px rgba(139,111,71,0.08);
+      background: rgba(255,255,255,0.35);
+      backdrop-filter: blur(6px);
+      border:2px solid rgba(139,111,71,0.4);
+    }
+
+    /* Shapes */
+    .shape-polygon { clip-path: polygon(0 6%, 100% 0, 100% 94%, 0% 100%); border-radius:12px; overflow:hidden; }
+    .shape-oval { border-radius:50%; overflow:hidden; width:160px; height:160px; display:inline-block; box-shadow:0 10px 30px rgba(139,111,71,0.08); }
+    .shape-rounded{ border-radius:18px; overflow:hidden; }
+
+    /* Section title */
+    .section-title{
+      font-weight:700;
+      text-transform:uppercase;
+      color:var(--soft-brown);
+      letter-spacing:.9px;
+      margin-bottom:16px;
+      font-size:.9rem;
+    }
+body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 40px 0;
+    }
+
+    .card-container {
+        width: 85%;
+        max-width: 900px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .chapter-card {
+        background: #F7EFE7;       /* krem */
+        border: 2px solid #5A4636; /* coklat tua */
+        border-radius: 14px;
+        padding: 0;
+        overflow: hidden;
+        transition: 0.3s ease;
+    }
+
+    .chapter-header {
+        background: #D2B8A3; /* coklat susu */
+        padding: 18px 22px;
+        font-weight: 700;
+        color: #4A3C2F;
+        cursor: pointer;
+        font-size: 1.15rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .chapter-header:hover {
+        background: #c8a993;
+    }
+
+    .chapter-content {
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 22px;
+        color: #4A3C2F;
+        line-height: 1.6;
+        transition: max-height 0.35s ease, padding 0.35s ease;
+    }
+
+    .chapter-content.open {
+        padding: 22px;
+    }
+
+    .arrow {
+        transition: transform 0.3s ease;
+    }
+
+    .arrow.rotate {
+        transform: rotate(180deg);
+    }
+
+    .inner-img {
+        width: 100%;
+        border-radius: 10px;
+        border: 2px solid #5A4636;
+        margin-top: 12px;
+    }
+
+    .big-card {
+  background: #f7efe3;
+  border: 3px solid #5a3b2e;
+  border-radius: 18px;
+  padding: 25px;
+  margin-top: 40px;
+}
+
+.before-after-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.side-box {
+  width: 42%;
+  background: #fff8f0;
+  border: 2px solid #5a3b2e;
+  border-radius: 12px;
+  padding: 15px;
+  text-align: center;
+}
+
+.side-box img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #5a3b2e;
+}
+
+.side-box h3 {
+  color: #5a3b2e;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.arrow-btn {
+  cursor: pointer;
+  font-size: 35px;
+  color: #5a3b2e;
+  transition: 0.3s;
+}
+
+.arrow-btn:hover {
+  transform: translateY(5px);
+}
+
+.detail-box {
+  margin-top: 20px;
+  padding: 20px;
+  background: #fff8f0;
+  border: 2px solid #5a3b2e;
+  border-radius: 12px;
+  display: none; /* hidden by default */
+  color: #4b372a;
+}
+
+/* BEFORE–AFTER brown cards */
+.brown-card {
+  border: 2px solid #5a3d2b;
+  border-radius: 14px;
+  background-color: #fff6ee;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Arrow button */
+.arrow-btn {
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  color: #5a3d2b;
+  transition: 0.3s;
+}
+
+.arrow-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Hidden explanation */
+.explanation {
+  display: none;
+  padding: 20px;
+  border: 2px solid #5a3d2b;
+  background-color: #fff6ee;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.brown-card img {
+  width: 100%;
+  height: 200px;  
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.brown-card {
+  min-height: 300px;  
+}
+.brown-card {
+  background: #f4e7d3;
+  border: 2px solid #a37952;
+  border-radius: 15px;
+}
+
+.icon-img {
+  width: 120px;
+  height: auto;
+}
+
+.hidden-text {
+  display: none;
+}
+.img-box {
+  width: 100%;
+  height: 170px;
+  border: 2px solid #a37952;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.img-inner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-caption {
+  font-size: 14px;
+  margin-top: 6px;
+  color: #6d4e31;
+  font-weight: 500;
+}
+    .step-card {
+        background: #f2f8ff;
+        border-radius: 14px;
+        padding: 16px 20px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        transition: 0.25s;
+        border: 1px solid #d8e7ff;
+    }
+
+    .step-card:hover {
+        background: #e7f1ff;
+    }
+
+    .step-title {
+        font-weight: 600;
+        font-size: 17px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .step-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+        font-size: 15px;
+        margin-top: 6px;
+        line-height: 1.55;
+    }
+
+    .step-card.active .step-content {
+        max-height: 300px; 
+    }
+
+    .chevron {
+        transition: transform 0.3s;
+    }
+
+    .step-card.active .chevron {
+        transform: rotate(180deg);
+    }
+    .brown-card {
+  background:#c8a27c;
+  border-radius:15px;
+  color:white;
+}
+
+.toggle-btn {
+  background:white;
+  color:#6d4e31;
+  border-radius:10px;
+  font-weight:600;
+}
+
+.img-box {
+  width:100%;
+  height:140px;
+  background:white;
+  border-radius:12px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.img-inner {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.img-caption {
+  color:#5a3f2c;
+  font-weight:600;
+  margin-top:6px;
+}
+#solusiCarousel img {
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+#solusiCarousel .carousel-item {
+    background: #f5e8d8;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+   footer {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+  }
+
+  </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="./images/logoserviam.png" alt="logo" width="30" height="30" class="me-2">
+    <b>NOIR.</b>
+</a>
+
+
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+
+        <!-- Products Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link fw-semibold dropdown-toggle" href="#" data-bs-toggle="dropdown">Highlight</a>
+
+          <ul class="dropdown-menu shadow-sm">
+            <li><a class="dropdown-item" href="./Phase 1.html">Phase 1</a></li>
+            <li><a class="dropdown-item" href="./phase 2.html">Phase 2</a></li>
+            <li><a class="dropdown-item" href="./phase 3.html">Phase 3</a></li>
+            <li><a class="dropdown-item" href="./phase 4.html">Phase 4</a></li>
+            <li><a class="dropdown-item" href="./phase 5.html">Phase 5</a></li>
+            <li><a class="dropdown-item" href="./phase 6.html">Phase 6</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link fw-semibold" href="./our creation.html">Our Creation</a></li>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero" style="margin-top:76px;">
+  <div class="row g-3 align-items-center">
+    
+    <!-- KIRI -->
+    <div class="col-md-7">
+      <h1><span style="color:var(--soft-brown)"><b>Kebaikan Bersama dalam Industrialisasi Berkelanjutan</b></span></h1>
+      <p class="lead fw-semibold">Teknologi dan sumber daya harus digunakan untuk kesejahteraan bersama dengan menyeimbangkan pertumbuhan ekonomi dan kelestarian lingkungan.</p>
+
+      <div class="d-flex gap-2 align-items-center mt-3">
+        <a href="#learn-phase6" class="btn btn-primary" style="background:linear-gradient(180deg,var(--soft-brown),var(--brown-muted)); border:none;">
+          Pelajari Phase Six
+        </a>
+      </div>
+    </div>
+    <div class="col-md-5 text-center">
+      <div class="shape-polygon">
+        <img src="./images/heropage phase 6.jpeg" style="width:100%;">
+      </div>
+    </div>
+
+  </div>
+</header>
+
+
+
+<div class="card-container">
+
+    <!-- CARD 1 -->
+    <main id="learn-phase6" class="container" style="max-width:1100px; margin-top:28px;">
+    <div class="chapter-card"> 
+        <div class="chapter-header" onclick="toggleCard(1)">
+            Apa itu Bonum Commune
+            <span class="arrow" id="arrow1">⌄</span>
+        </div>
+        <div class="chapter-content" id="content1">
+            <p>
+                Prinsip <b>bonum commune</b> menekankan bahwa kegiatan ekonomi tidak boleh hanya menguntungkan satu kelompok. Industri seharusnya berjalan dengan tujuan menjaga martabat manusia, memelihara lingkungan, dan memastikan manfaat bisa dirasakan seluruh masyarakat. Saat industri mengambil keputusan tentang produksi, distribusi, atau pemanfaatan energi, kebaikan bersama ini menjadi kompas moral agar teknologi yang maju tetap berdampak positif untuk kehidupan sosial.
+            </p>
+            <img class="inner-img" src="https://images.unsplash.com/photo-1521790361543-f645cf042ec1" alt="">
+        </div>
+    </div>
+    </main>
+
+<div class="container my-5">
+
+<div class="container my-5">
+
+  <!-- BEFORE–AFTER ROW -->
+   <h2 class="text-center fw-bold mb-4" style="color: var(--brown-muted);">
+  Eksploitasi SDA dan SDM
+</h2>
+  <div class="row justify-content-center g-4 mb-4">
+    
+    <div class="col-md-4">
+      <div class="brown-card text-center p-4">
+        <h4 class="fw-bold mb-3">Before</h4>
+        <img src="./images/before.jpeg" alt="before">
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="brown-card text-center p-4">
+        <h4 class="fw-bold mb-3">After</h4>
+        <img src="./images/after.jpeg" alt="after">
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ARROW BUTTON -->
+  <div class="text-center mb-3">
+    <button id="arrowBtn" class="arrow-btn">▼</button>
+  </div>
+
+  <!-- PENJELASAN -->
+  <div id="explanationBox" class="explanation">
+    <p>
+      Industri yang tidak mengelola SDA dan SDM dengan bijak akan menyebabkan kerusakan lingkungan dan ketimpangan sosial. Solusinya adalah produksi berkelanjutan, penghematan energi, dan perlindungan pekerja.
+    </p>
+  </div>
+
+</div>
+
+<div class="brown-card text-center p-4">
+  <img src="./images/serakah.jpeg" class="icon-img mb-3">
+
+  <h3 class="fw-bold mt-4" style="color:#6d4e31;">Menolak Sikap Serakah</h3>
+
+  <button class="btn mt-3" id="toggleGreed" style="
+    border: 2px solid #5C4033;  /* kotak coklat tua */
+    color: #5C4033;             /* teks coklat tua */
+    background-color: rgba(255, 255, 255, 0.5); /* putih transparan */
+    padding: 8px 16px;
+    border-radius: 12px;        /* sudut agak round */
+    cursor: pointer;
+">
+  <b>Pelajari</b>
+</button>
+
+
+
+
+  <div id="greedText" class="hidden-text mt-3">
+    <p style="color: #5C4033; text-align: justify;">
+  Dorongan untuk selalu memproduksi lebih banyak bisa memicu perilaku yang tidak sehat, baik untuk lingkungan maupun masyarakat. Karena itu, industri dan konsumen perlu menahan pola serakah dan beralih ke kebiasaan yang lebih bijak.
+</p>
+
+    <h5 class="fw-bold mt-4" style="color:#6d4e31;">Contoh Penerapan</h5>
+    <div class="row mt-3 g-3">
+
+      <div class="col-md-4">
+        <div class="img-box">
+          <img src="./images/penerapan 1.jpeg" class="img-inner">
+        </div>
+        <p class="img-caption">Produksi Sesuai Kebutuhan</p>
+      </div>
+
+      <div class="col-md-4">
+        <div class="img-box">
+          <img src="./images/penerapan 2.jpeg" class="img-inner">
+        </div>
+        <p class="img-caption">Pola Konsumsi yang Sadar</p>
+      </div>
+
+      <div class="col-md-4">
+        <div class="img-box">
+          <img src="./images/penerapan 3.jpeg" class="img-inner">
+        </div>
+        <p class="img-caption">Menghindari persaingan tidak sehat</p>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="container mt-4">
+
+    <h3 class="mb-3 fw-bold">Hormati Hak-Hak</h3>
+
+    <!-- STEP 1 -->
+    <div class="step-card" onclick="toggleStep(this)">
+        <div class="step-title">
+            Hak atas tanah, pekerjaan, & ruang hidup aman
+            <span class="chevron">▼</span>
+        </div>
+        <div class="step-content">
+            Setiap individu memiliki hak atas tanah, pekerjaan, dan ruang hidup yang aman. 
+            Aktivitas industri harus memastikan bahwa setiap keputusan yang diambil tidak 
+            mengorbankan keamanan maupun keberlangsungan hidup masyarakat.
+        </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step-card" onclick="toggleStep(this)">
+        <div class="step-title">
+            Jangan merampas ruang masyarakat adat atau lokal
+            <span class="chevron">▼</span>
+        </div>
+        <div class="step-content">
+            Pengembangan industri tidak boleh merampas ruang masyarakat adat atau komunitas 
+            lokal. Setiap ekspansi harus mempertimbangkan keberadaan budaya, ruang hidup, 
+            dan hak historis yang dimiliki komunitas tersebut.
+        </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step-card" onclick="toggleStep(this)">
+        <div class="step-title">
+            Transparansi rantai produksi
+            <span class="chevron">▼</span>
+        </div>
+        <div class="step-content">
+            Rantai produksi wajib menjamin transparansi agar tidak ada pihak yang dipaksa 
+            menyerahkan haknya. Masyarakat harus dapat mengetahui sumber bahan baku, proses 
+            produksi, serta dampak sosial dari kegiatan tersebut.
+        </div>
+    </div>
+
+    <!-- STEP 4 -->
+    <div class="step-card" onclick="toggleStep(this)">
+        <div class="step-title">
+            Penyelesaian konflik lahan secara adil
+            <span class="chevron">▼</span>
+        </div>
+        <div class="step-content">
+            Konflik lahan harus diselesaikan melalui dialog dan mekanisme hukum yang adil, 
+            bukan intimidasi atau tekanan. Semua pihak harus mendapatkan ruang bicara yang 
+            setara dan perlindungan hukum yang jelas.
+        </div>
+    </div>
+</div>
+
+<!-- CAROUSEL SOLUSI KONFLIK INDUSTRI vs LINGKUNGAN -->
+<div id="solusiCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
+  <div class="carousel-inner">
+
+    <!-- ITEM 1 -->
+    <div class="carousel-item active">
+      <div class="row align-items-center p-3">
+        <div class="col-md-5">
+          <img src="./images/melibatkan warga.jpeg" class="d-block w-100 rounded" alt="">
+        </div>
+        <div class="col-md-7">
+          <h5 class="fw-bold" style="color:#6d4e31;">Melibatkan Warga Terdampak</h5>
+          <p>
+            Keputusan industri harus melibatkan masyarakat lokal sejak awal perencanaan.
+            Dengan partisipasi warga, risiko konflik berkurang dan kebutuhan lingkungan dapat dipertimbangkan.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="carousel-item">
+      <div class="row align-items-center p-3">
+        <div class="col-md-5">
+          <img src="./images/teknolog ramah lingkungan.jpeg" class="d-block w-100 rounded" alt="">
+        </div>
+        <div class="col-md-7">
+          <h5 class="fw-bold" style="color:#6d4e31;">Teknologi Ramah Lingkungan</h5>
+          <p>
+            Industri dapat memakai teknologi yang hemat energi, minim limbah, dan menekan polusi,
+            sehingga produksi tetap berjalan tanpa merusak ekosistem.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="carousel-item">
+      <div class="row align-items-center p-3">
+        <div class="col-md-5">
+          <img src="./images/kebijakan.jpeg" class="d-block w-100 rounded" alt="">
+        </div>
+        <div class="col-md-7">
+          <h5 class="fw-bold" style="color:#6d4e31;">Kebijakan Batas Pemanfaatan SDA</h5>
+          <p>
+            Pemerintah dan industri harus menerapkan batas yang jelas terhadap
+            penggunaan lahan, air, dan energi untuk mencegah eksploitasi berlebihan.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NAVIGATION -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#solusiCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#solusiCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+ </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center mt-5" style="padding:28px 0; background:linear-gradient(180deg,var(--soft-brown),var(--brown-muted)); color:white;">
+  <small>© 2025 NOIR. — All Rights Reserved</small>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function toggleCard(num) {
+    const content = document.getElementById("content" + num);
+    const arrow = document.getElementById("arrow" + num);
+
+    if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        content.classList.remove("open");
+        arrow.classList.remove("rotate");
+    } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        content.classList.add("open");
+        arrow.classList.add("rotate");
+    }
+}
+const btn = document.getElementById("arrowBtn");
+  const box = document.getElementById("explanationBox");
+  let open = false;
+
+  btn.addEventListener("click", () => {
+    open = !open;
+    box.style.display = open ? "block" : "none";
+    btn.textContent = open ? "▲" : "▼";
+  });
+
+document.getElementById("toggleGreed").addEventListener("click", function() {
+  const box = document.getElementById("greedText");
+
+  if (box.style.display === "none" || box.style.display === "") {
+    box.style.display = "block";
+  } else {
+    box.style.display = "none";
+  }
+});
+ function toggleStep(card) {
+        card.classList.toggle("active");
+    }
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phase 1 — Revolusi Industri (Creative)</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --soft-brown: #8b6f47;
+      --brown-muted: #b5997b;
+      --ink: #2b2622;
+      --card: #fffdf8;
+    }
+
+    html, body{
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      /* . */
+      background-image: url("./images/bg\ nyoba.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: "Poppins", sans-serif;
+      color: var(--ink);
+    }
+
+    body{ padding-bottom: 80px; }
+
+    /* NAV */
+    .navbar { background:#ffffff; }
+    .nav-link{ font-weight:600; }
+
+    /* HERO */
+    .hero {
+      max-width:1100px;
+      margin:90px auto 36px;
+      padding:28px;
+      border-radius:16px;
+      box-shadow:0 14px 40px rgba(139,111,71,0.08);
+      background: rgba(255,255,255,0.35);
+      backdrop-filter: blur(6px);
+      border:2px solid rgba(139,111,71,0.4);
+    }
+
+    /* shape polygon (parallelogram) */
+    .shape-polygon {
+      clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+      border-radius:14px;
+      overflow:hidden;
+      display:block;
+      position:relative;
+      display:inline-block;
+      width:100%;
+    }
+    .shape-polygon img { display:block; width:100%; height:auto; }
+
+    /* ===== CARDS ===== */
+
+    .case-section {
+        padding: 80px 20px;
+        background: #f5eee5;
+    }
+
+    .case-title {
+        text-align: center;
+        font-size: 2.3rem;
+        margin-bottom: 50px;
+        color: #5b3c22;
+        font-weight: 700;
+    }
+
+    /* Grid Cards */
+    .case-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+        gap: 35px;
+        width: 100%;
+        max-width: 1100px;
+        margin: auto;
+         align-items: start;
+    }
+
+    /* Card */
+    .case-card {
+        background: #fff;
+        border-radius: 16px;
+        overflow: hidden;
+        border: 2px solid #c6a27b;
+        box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+        transition: 0.3s;
+    }
+
+    .case-card:hover {
+        transform: translateY(-4px);
+    }
+
+    /* Image */
+    .case-card img {
+        width: 100%;
+        height: 210px;
+        object-fit: cover;
+        border-bottom: 3px solid #b1855b;
+    }
+
+    /* Content */
+    .case-info {
+        padding: 22px;
+    }
+
+    .case-info h3 {
+        font-size: 1.4rem;
+        color: #57381c;
+        margin-bottom: 12px;
+    }
+
+    .case-info p {
+        color: #5c4634;
+        font-size: 0.95rem;
+    }
+
+    /* Toggle Button */
+    .case-toggle {
+        margin-top: 15px;
+        background: #b08968;
+        color: white;
+        width: 100%;
+        border: none;
+        padding: 10px;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .case-toggle:hover {
+        background: #8e6c4c;
+    }
+
+    /* Hidden Panel */
+    .case-extra {
+        padding: 20px;
+        border-top: 2px solid #d7b090;
+        background: rgba(255,255,255,0.75);
+        display: none;
+        animation: fadeCase 0.3s ease;
+    }
+    .case-extra.show {
+        display: block;
+    }
+
+    @keyframes fadeCase {
+        from { opacity: 0; transform: translateY(8px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .case-extra h4 {
+        font-size: 1.15rem;
+        margin-bottom: 10px;
+        color: #5b3c22;
+    }
+
+    .case-extra ul {
+        margin-left: 20px;
+        color: #4a3829;
+    }
+
+  </style>
+
+</head>
+
+<body>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="./images/logoserviam.png" alt="logo" width="30" height="30" class="me-2">
+    <b>NOIR.</b>
+</a>
+
+
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+
+        <!-- Products Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link fw-semibold dropdown-toggle" href="#" data-bs-toggle="dropdown">Highlight</a>
+
+          <ul class="dropdown-menu shadow-sm">
+            <li><a class="dropdown-item" href="./Phase 1.html">Phase 1</a></li>
+            <li><a class="dropdown-item" href="./phase 2.html">Phase 2</a></li>
+            <li><a class="dropdown-item" href="./phase 3.html">Phase 3</a></li>
+            <li><a class="dropdown-item" href="./phase 4.html">Phase 4</a></li>
+            <li><a class="dropdown-item" href="./phase 5.html">Phase 5</a></li>
+            <li><a class="dropdown-item" href="./phase 6.html">Phase 6</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link fw-semibold" href="./our creation.html">Our Creation</a></li>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero" style="margin-top:76px;">
+  <div class="row g-3 align-items-center">
+    <div class="col-md-7">
+      <h1><span style="color:var(--soft-brown)"><b>Pelanggaran dalam Industrialisasi</b></span></h1>
+      <p class="lead fw-semibold">Industrialisasi membawa dampak besar namun juga menimbulkan banyak penyimpangan. Ketidakadilan dan kerusakan alam menjadi tantangan yang harus diatasi.</p>
+      <div class="d-flex gap-2 align-items-center mt-3">
+<a href="#phase1" class="btn btn-primary"style="background:linear-gradient(180deg,var(--soft-brown),var(--brown-muted)); border:none;">Pelajari Phase Four </a>
+      </div>
+    </div>
+
+    <div class="col-md-5 text-center">
+      <div class="shape-polygon">
+        <img src="./images/heropage phase 4.jpg" style="width:100%;">
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<main class="container" style="max-width:1100px; margin-top:28px;" id="phase1">
+
+<section class="case-section" id="product4">
+    <h2 class="section-title mb-4 text-center"><span style="color:var(--soft-brown)"><b>Pelanggaran Industrialisasi</b></h2>
+  <div id="brownCarousel" class="carousel slide brown-carousel" data-bs-ride="carousel">
+
+    <div class="case-grid">
+        <div class="case-card" data-case>
+            <img src="./images/eksploitasi pekerja.jpg" alt="">
+            <div class="case-info">
+                <h3>Eksploitasi Pekerja</h3>
+                <p>Sebanyak 97 WNI di Kamboja dieksploitasi dalam perusahaan scam daring, dengan 86 orang ditahan dan 11 terluka saat mencoba kabur. Kasus ini menunjukkan bagaimana tawaran kerja luar negeri dapat menipu ketika literasi digital dan pemahaman risiko masih lemah.</p>
+                <p1>Sumber: https://www.metrotvnews.com/read/kELCz9Xe-ekploitasi-pekerja-migran-indonesia-cermin-praktik-tppo-terus-berkembang</p1>
+                <button class="case-toggle">Lihat Analisis</button>
+            </div>
+            <div class="case-extra">
+                <h4>Analisis :</h4>
+                <ul>
+                    <p>Eksploitasi 97 pekerja migran Indonesia di Kamboja menunjukkan bahwa hak warga negara atas pekerjaan dan penghidupan yang layak (Pasal 27 ayat 2 UUD 1945) belum sepenuhnya terlindungi. Penipuan lowongan kerja, kerja paksa, dan kondisi kerja yang membahayakan membuktikan bahwa masih ada celah besar dalam pengawasan perekrutan tenaga kerja migran serta rendahnya literasi risiko pada calon pekerja.</p>
+                    <p1>Solusi :</p1>
+                    <li> ⁠Penguatan pengawasan dan legalitas perekrutan.</li>
+                    <li> ⁠Edukasi publik tentang risiko kerja luar negeri.</li>
+                    <li> ⁠Perjanjian bilateral yang lebih kuat.</li>
+                    <li> Akses laporan dan bantuan hukum yang mudah.</li>
+                    <li> ⁠Penegakan hukum terhadap pelaku TPPO.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="case-card" data-case>
+            <img src="./images/pencemaran lingkungan.jpg" alt="">
+            <div class="case-info">
+                <h3>Pencemaran Lingkungan</h3>
+                <p>Tiga perusahaan di Tangerang disegel karena terbukti membuang limbah industri ke sungai, sehingga mencemari air dan merusak lingkungan sekitar. Operasi mereka dihentikan dan izin produksi dibekukan menyusul temuan pelanggaran lingkungan berat.</p>
+                <p1>Sumber : inp.polri.go.id/artikel/govt-banned-three-companies-for-polluting-the-environment</p1>
+                <button class="case-toggle">Lihat Analisis</button>
+            </div>
+            <div class="case-extra">
+                <h4>Analisis :</h4>
+                <ul>
+                    <p>Kasus pencemaran limbah oleh tiga perusahaan ini memperlihatkan bahwa orientasi keuntungan tanpa kendali merusak lingkungan dan melanggar hak masyarakat atas lingkungan yang sehat, sebagaimana dijamin Pasal 28H ayat (1) UUD 1945. Pelanggaran seperti ini menunjukkan lemahnya kepatuhan pada standar pengelolaan limbah dan minimnya pengawasan terhadap aktivitas industri.</p>
+                    <p1>Solusi : </p1>
+                    <li>⁠Penegakan hukum yang konsisten terhadap perusahaan yang mencemari lingkungan.</li>
+                    <li>Audit lingkungan rutin dan kewajiban transparansi hasilnya.</li>
+                    <li>⁠⁠Penerapan teknologi pengolahan limbah yang sesuai standar.</li>
+                    <li>⁠⁠Melibatkan masyarakat dalam pelaporan dan pengawasan dampak lingkungan.</li>
+                    <li>  ⁠⁠Sanksi tegas yang menimbulkan efek jera agar perusahaan tidak mengulangi pelanggaran.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="case-card" data-case>
+            <img src="./images/perampasan tanah.jpg" alt="">
+            <div class="case-info">
+                <h3>Perampasan Tanah</h3>
+                <p>Dalam sepuluh tahun terakhir, sekitar 12 juta hektar tanah masyarakat adat di Indonesia hilang akibat perampasan lahan. Lahan tersebut diambil untuk kepentingan perusahaan dan berbagai proyek berskala besar.</p>
+                <p1>Sumber : www.kompas.com/properti/read/2025/02/16/110000221/satu-dekade-terakhir-12-juta-hektar-tanah-masyarakat-adat-dirampas</p1>
+                <button class="case-toggle">Analisis</button>
+            </div>
+            <div class="case-extra">
+                <h4>Analisis</h4>
+                <ul>
+                    <p>Perampasan tanah adat menunjukkan bahwa hak masyarakat adat atas wilayah tradisionalnya masih sering diabaikan, padahal UUD 1945 Pasal 18B ayat (2) mewajibkan negara mengakui dan menghormati hak tersebut. Situasi ini menegaskan perlunya perlindungan hukum yang lebih kuat agar masyarakat adat tidak terus menjadi korban kepentingan perusahaan atau proyek besar.</p>
+                    <p1>Solusi : </p1>
+                    <li>⁠Perkuat penegakan hukum terhadap perusahaan yang merampas tanah adat.</li>
+                    <li>Wajibkan proses persetujuan bebas, didahulukan, dan diinformasikan (FPIC) sebelum proyek berjalan.</li>
+                    <li>Perjelas dan percepat pengakuan wilayah adat melalui regulasi nasional.</li>
+                    <li>Libatkan masyarakat adat dalam pengawasan penggunaan lahan.</li>
+                    <li>Tingkatkan transparansi dan evaluasi izin usaha yang memakai wilayah adat.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="case-card" data-case>
+            <img src="./images/ketidakadilan distribusi sda.jpg" alt="">
+            <div class="case-info">
+                <h3>Korupsi SDA</h3>
+                <p>Kasus korupsi tambang timah di wilayah IUP PT Timah Tbk (2015–2022) menimbulkan kerusakan lingkungan besar dengan nilai kerugian ekologis yang dihitung mencapai sekitar Rp 271 triliun. Penambangan ilegal dan penyalahgunaan izin menjadi faktor utama yang memperparah kerusakan tersebut.</p>
+                <p1>Sumber : https://unair.ac.id/korupsi-tambang-timah-kerugian-lingkungan-mencapai-rp-271-triliun/</p1>
+                <button class="case-toggle">Analisis</button>
+            </div>
+            <div class="case-extra">
+                <h4>Analisis :</h4>
+                <ul>
+                    <p>Kasus korupsi tambang timah menunjukkan bahwa hak rakyat atas lingkungan hidup yang sehat masih sering diabaikan, padahal UUD 1945 Pasal 28H ayat (1) dan Pasal 33 ayat (3) mewajibkan negara melindungi lingkungan dan mengelola kekayaan alam untuk kemakmuran rakyat. Situasi ini menegaskan perlunya pengawasan dan penegakan hukum yang lebih kuat agar kerusakan lingkungan dan kerugian negara tidak terus terjadi.</p>
+                    <li>Menegakkan hukum tegas terhadap penyalahgunaan izin dan penambangan ilegal.</li>
+                    <li>Rehabilitasi lingkungan dan pemulihan ekosistem tambang.</li>
+                    <li>Perketat pengawasan izin pertambangan secara transparan dan rutin.</li>
+                    <li>Libatkan masyarakat dalam pengawasan dan pelaporan kegiatan ilegal.</li>
+                    <li>Pastikan pemanfaatan hasil tambang digunakan untuk kesejahteraan rakyat.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="case-card" data-case>
+            <img src="./images/penyalahgunaan.jpg" alt="">
+            <div class="case-info">
+                <h3>Penyalahgunaan Media Industri</h3>
+                <p>Kasus pelanggaran etika periklanan dan media sosial mulai menurun, menunjukkan meningkatnya kesadaran perusahaan dan figur publik untuk membuat konten yang lebih bertanggung jawab dan tidak merugikan masyarakat.</p>
+                <p1>Sumber : https://www.indonesiana.id/read/182308/pelanggaran-etika-dalam-periklanan-dan-media-sosial </p1>
+                <button class="case-toggle">Lihat Bukti & Analisis</button>
+            </div>
+            <div class="case-extra">
+                <h4>Analisis :</h4>
+                <p>Iklan diskriminatif melanggar Pasal 28D ayat (1) UUD 1945 karena pasal ini menjamin setiap orang mendapat perlakuan yang adil. Saat iklan menampilkan stereotip yang merendahkan kelompok tertentu, itu berarti tidak memberikan keadilan dan memperlakukan orang secara tidak setara.</p>
+                <ul>
+                    <li>Gunakan representasi yang inklusif.</li>
+                    <li>Influencer wajib transparan dan patuh aturan.</li>
+                    <li>Perkuat pengawasan pemerintah terhadap konten digital.</li>
+                    <li>Edukasi masyarakat agar kritis terhadap konten menyesatkan.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="case-card" data-case>
+            <img src="./images/ham.jpg" alt="">
+            <div class="case-info">
+                <h3>Analisis HAM & Nilai Agama</h3>
+                <p>Laporan CRI menunjukkan industri nikel di Indonesia masih menimbulkan pencemaran udara dan air, perampasan lahan, ancaman terhadap masyarakat adat, serta pelanggaran hak pekerja.</p>
+                <p1>Sumber : https://betahita.id/news/detail/11495/pelanggaran-lingkungan-dan-ham-meluas-dalam-industri-nikel-cri.html?v=1760908764</p1>
+                <button class="case-toggle">Lihat Bukti & Analisis</button>
+            </div>
+            <div class="case-extra">
+                <h4>Analisis :</h4>
+                <p>Melanggar Pasal 28H ayat (1) UUD 1945, karena pasal ini menjamin hak setiap warga negara untuk hidup sejahtera, memiliki lingkungan hidup yang baik dan sehat. Pencemaran, perampasan lahan, dan rusaknya ekosistem akibat industri nikel secara jelas menghilangkan hak masyarakat atas lingkungan yang aman dan layak.</p>
+                <ul>
+                    <li>Berikan kompensasi adil dan lindungi hak masyarakat adat.</li>
+                    <li>Perkuat pengawasan dan transparansi izin tambang serta PLTU batu bara.</li>
+                    <li>Wajibkan perusahaan beralih ke energi bersih dan menghentikan deforestasi.</li>
+                    <li>Libatkan masyarakat dalam pemantauan dan akses informasi publik.</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</main>
+
+<footer class="text-center mt-5" style="padding:28px 0; background:linear-gradient(180deg,var(--soft-brown),var(--brown-muted)); color:white;">
+  <small>© 2025 NOIR. — All Rights Reserved</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.querySelectorAll(".case-toggle").forEach(button => {
+    button.addEventListener("click", () => {
+        const card = button.closest("[data-case]");
+        if (!card) return;
+        const extra = card.querySelector(".case-extra");
+        const open = extra.classList.toggle("show");
+        button.textContent = open
+            ? "Sembunyikan Analisis"
+            : "Lihat Bukti & Analisis";
+    });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Phase 1 — Revolusi Industri (Creative)</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --soft-brown: #8b6f47;
+      --brown-muted: #b5997b;
+      --ink: #2b2622;
+      --card: #fffdf8;
+    }
+
+    html, body{
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-image: url('./images/bg\ nyoba.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: "Poppins";
+      color: var(--ink);
+    }
+
+    body{ padding-bottom: 80px; }
+
+    /* NAV */
+    .navbar { background:#ffffff; }
+    .nav-link{ font-weight:600; }
+
+    /* HERO */
+    .hero {
+      max-width:1100px;
+      margin:90px auto 36px;
+      padding:28px;
+      border-radius:16px;
+      box-shadow:0 14px 40px rgba(139,111,71,0.08);
+      background: rgba(255,255,255,0.35);
+      backdrop-filter: blur(6px);
+      border:2px solid rgba(139, 111, 71, 0.4);
+    }
+
+   
+/* Timeline Section */
+.timeline-section {
+    padding: 80px 20px;
+    background: #FFFFFF59; /* rgba(255,255,255,0.35) */
+    backdrop-filter: blur(6px);
+    border-radius: 18px;
+}
+
+.timeline-title {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 60px;
+    color: #6d4e2f; /* soft brown */
+}
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Garis tengah */
+.timeline::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    background: #c8a57f; /* brown muted */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 10px;
+}
+
+.timeline-item {
+    padding: 20px 40px;
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Gambar timeline */
+.timeline-item img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    border: 4px solid #a1744f; /* outline coklat */
+}
+
+/* Titik bulat */
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 22px;
+    height: 22px;
+    background: #a1744f; /* coklat */
+    border-radius: 50%;
+    top: 40px;
+    border: 4px solid #ffffff;
+    z-index: 10;
+}
+
+/* Posisi kiri */
+.timeline-item.left {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item.left::before {
+    right: -12px;
+}
+
+/* Posisi kanan */
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item.right::before {
+    left: -12px;
+}
+
+.content {
+    background: rgba(255,255,255,0.75);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(139,111,71,0.3);
+    backdrop-filter: blur(4px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Info */
+.extra-info {
+    display: none;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid rgba(139,111,71,0.4);
+    padding: 16px;
+    margin-top: 10px;
+    border-radius: 12px;
+    animation: fadeIn 0.4s ease;
+}
+
+/* Tombol panah */
+.toggle-btn {
+    background: #a1744f; /* coklat */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.toggle-btn:hover {
+    background: #c28b5c; /* coklat lebih terang */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 8px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 40px;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+
+    .timeline-item::before {
+        left: 0;
+    }
+
+    .timeline-item.left {
+        text-align: left;
+    }
+}
+
+/* Fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Shapes */
+.shape-polygon {
+  clip-path: polygon(0 6%, 100% 0, 100% 94%, 0% 100%);
+  border-radius: 12px;
+  overflow: hidden;
+}
+  </style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="./images/logoserviam.png" alt="logo" width="30" height="30" class="me-2">
+    <b>NOIR.</b>
+</a>
+
+
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+
+        <!-- Products Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link fw-semibold dropdown-toggle" href="#" data-bs-toggle="dropdown">Highlight</a>
+
+          <ul class="dropdown-menu shadow-sm">
+            <li><a class="dropdown-item" href="./Phase 1.html">Phase 1</a></li>
+            <li><a class="dropdown-item" href="./phase 2.html">Phase 2</a></li>
+            <li><a class="dropdown-item" href="./phase 3.html">Phase 3</a></li>
+            <li><a class="dropdown-item" href="./phase 4.html">Phase 4</a></li>
+            <li><a class="dropdown-item" href="./phase 5.html">Phase 5</a></li>
+            <li><a class="dropdown-item" href="./phase 6.html">Phase 6</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link fw-semibold" href="./our creation.html">Our Creation</a></li>
+    </div>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<header class="hero" style="margin-top:76px;">
+  <div class="row g-3 align-items-center">
+    <div class="col-md-7">
+      <h1><span style="color:var(--soft-brown)"><b>Pengaruh Revolusi Industri terhadap Masyarakat Indonesia</b></span></h1>
+      <p class="lead fw-semibold">Transformasi industri global membawa perubahan besar pada ekonomi, pola kerja, dan kehidupan sosial di Indonesia.</p>
+      <div class="d-flex gap-2 align-items-center mt-3">
+        <a href="#phase3" class="btn btn-primary"style="background:linear-gradient(180deg,var(--soft-brown),var(--brown-muted)); border:none;">Pelajari Phase Three </a>
+      </div>
+    </div>
+
+    <div class="col-md-5 text-center">
+      <div class="shape-polygon">
+        <img src="./images/heropage phase 3.jpg" style="width:100%;">
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<main class="container" style="max-width:1100px; margin-top:28px;">
+</style>
+
+
+<section class="timeline-section" id="phase3">
+  <h6 class="timeline-title"> <b>Pengaruh Revolusi Industri terhadap Masyarakat Indonesia</b></h6>
+  <div class="row g-3">
+
+    <div class="timeline">
+        <!--  Urbanisasi -->
+        <div class="timeline-item left">
+            <img src="./images/urbanisasi.jpg" alt="Urbanisasi">
+            <div class="content">
+                <h3><span style="color:var(--soft-brown)"><b>Urbanisasi</b></span></h3>
+                <p class="lead fw-semibold">Perpindahan besar-besaran dari desa ke kota.</p>
+
+                <button class="toggle-btn">Lihat lebih banyak ▼</button>
+
+                <div class="extra-info">
+                    <p>Menyebabkan:</p>
+                    <ul>
+                        <li>Menarik masyarakat pindah dari desa ke kota karena peluang kerja dan fasilitas lebih baik.</li>
+                        <li>Kota berkembang pesat, namun muncul masalah kepadatan, permukiman kumuh, dan kesenjangan desa–kota.</li>
+                        <li>Otomatisasi dan teknologi menggeser pekerjaan tradisional serta mengurangi kebutuhan tenaga fisik</li>
+                        <li>Akses pendidikan & fasilitas meningkat</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Perubahan pekerjaan -->
+        <div class="timeline-item right">
+            <img src="./images/pergnantian pekerjaan.jpg" alt="Perubahan pekerjaan">
+            <div class="content">
+                <h3><span style="color:var(--soft-brown)"><b>Perubahan Pekerjaan</b></span></h3>
+                <p class="lead fw-semibold">Peralihan jenis-jenis pekerjaan dari kerja berbasis tenaga fisik menuju pekerjaan yang menekankan keterampilan dan pengetahuan.</p>
+
+                <button class="toggle-btn">Lihat lebih banyak ▼</button>
+
+                <div class="extra-info">
+                    <p>Menyebabkan:</p>
+                    <ul>
+                        <li>Tenaga kerja yang bergeser dari sector agraris ke industri dan jasa.</li>
+                        <li>Pekerjaan manual digantikan oleh mesin.</li>
+                        <li>Keterampilan baru diperlukan, dan banyak cabang ilmu ditinggalkan namun pendidikan formal belum sepenuhnya ganti.</li>
+                        <li>Ketimpangan muncul antara pekerja terampil dan tidak terampil.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--  Konsumerisme -->
+        <div class="timeline-item left">
+            <img src="./images/konsumerisme.jpg" alt="Konsumerisme">
+            <div class="content">
+                <h3><span style="color:var(--soft-brown)"><b>Konsumerisme</b></span></h3>
+                <p class="lead fw-semibold">Pola hidup yang memprioritaskan pembelian barang melebihi kebutuhan dasar.</p>
+
+                <button class="toggle-btn">Lihat lebih banyak ▼</button>
+
+                <div class="extra-info">
+                    <p>Menyebabkan:</p>
+                    <ul>
+                        <li>Masyarakat lebih mudah terdorong membeli barang karena promosi media.</li>
+                        <li>Keinginan konsumsi meningkat lebih cepat daripada kemampuan finansial dan dapat menghambat pertumbuhan ekonomi masyarakat miskin.</li>
+                        <li>Produk cepat pakai diproduksi lebih karena permintaan banyak yang memicu sampah dan limbah.</li>
+                        <li>Nilai sosial bergeser dan kesenjangan sosial meningkat.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--  Globalisasi budaya -->
+        <div class="timeline-item right">
+            <img src="./images/globalisasi budaya.jpg" alt="Globalisasi budaya">
+            <div class="content">
+                <h3><span style="color:var(--soft-brown)"><b>Globalisasi Budaya</b></span></h3>
+                <p class="lead fw-semibold">Masuknya budaya luar yang mempengaruhi gaya hidup masyarakat Indonesia.</p>
+
+                <button class="toggle-btn">Lihat lebih banyak ▼</button>
+
+                <div class="extra-info">
+                    <p>Menyebabkan:</p>
+                    <ul>
+                        <li>Pola makan, fashion, hiburan, dan gaya hidup semakin bercampur.</li>
+                        <li>Bahasa, norma, dan kebiasaan lokal perlahan tergeser budaya global.</li>
+                        <li>Identitas generasi muda lebih terhubung ke tren internasional</li>
+                        <li>Jumlah merek produksi lokal semakin berkurang karena mendapatkan keuntungan yang tidak setara dengan produk asing </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--  Perubahan cara berpikir -->
+        <div class="timeline-item left">
+            <img src="./images/perubahan car aberpikir.jpg" alt="Teknologi dan media">
+            <div class="content">
+                <h3><span style="color:var(--soft-brown)"><b>Teknologi & Media Mengubah Cara Berpikir</b></span></h3>
+                <p class="lead fw-semibold">Perkembangan digital mengubah cara manusia belajar, berpendapat, berinteraksi dan bersosialisasi.</p>
+
+                <button class="toggle-btn">Lihat lebih banyak ▼</button>
+
+                <div class="extra-info">
+                    <p>Menyebabkan:</p>
+                    <ul>
+                        <li>Informasi diterima jauh lebih cepat, tapi sering tanpa verifikasi.</li>
+                        <li>Cara belajar bergeser ke visual dan instan, mengurangi fokus panjang.</li>
+                        <li>Opini publik mudah terbentuk.</li>
+                        <li>Pola komunikasi lebih singkat, cepat, dan berbasis media sosial.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!--  Tekanan SDA -->
+        <div class="timeline-item right">
+            <img src="./images/eksploitasi sda.jpg" alt="Tekanan SDA">
+            <div class="content">
+                <h3><span style="color:var(--soft-brown)"><b>Pola Konsumsi Meningkat</b></span></h3>
+                <p class="lead fw-semibold">Kebutuhan masyarakat naik seiring modernisasi dan kemudahan akses produk.</p>
+
+                <button class="toggle-btn">Lihat lebih banyak ▼</button>
+
+                <div class="extra-info">
+                    <p>Menyebabkan:</p>
+                    <ul>
+                        <li>Permintaan SDA melonjak, merusak kondisi lingkungan hidup akibat pengekstrakan.</li>
+                        <li>Produksi industri bertambah untuk memenuhi kebutuhan pasar.</li>
+                        <li>Limbah rumah tangga dan industri makin sulit dikendalikan.</li>
+                        <li>Ketergantungan impor barang tertentu semakin besar</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script>
+const buttons = document.querySelectorAll(".toggle-btn");
+
+buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const extraInfo = btn.nextElementSibling;
+        const isOpen = extraInfo.style.display === "block";
+        document.querySelectorAll(".extra-info").forEach(i => i.style.display = "none");
+        document.querySelectorAll(".toggle-btn").forEach(b => b.innerText = "Lihat lebih banyak ▼");
+
+        if (!isOpen) {
+            extraInfo.style.display = "block";
+            btn.innerText = "Sembunyikan ▲";
+        }
+    });
+});
+</script>
+
+
+</main>
+
+
+<!-- FOOTER -->
+<footer class="text-center mt-5" style="padding:28px 0; background:linear-gradient(180deg,var(--soft-brown),var(--brown-muted)); color:white;">
+  <small>© 2025 NOIR. — All Rights Reserved</small>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

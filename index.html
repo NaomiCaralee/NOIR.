@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coffee Mate</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+<!-- AOS Animation -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar Dropdown Hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0;
+}
+
+.dropdown-menu {
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+/* Hero */
+.hero-title {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.hero-img {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* HERO SLIDE LEFT-RIGHT */
+.hero-slide {
+  animation: slideLR 6s ease-in-out infinite alternate;
+  transform-origin: center;
+}
+
+@keyframes slideLR {
+  0% { transform: translateX(-25px); }
+  100% { transform: translateX(25px); }
+}
+
+/* Product cards */
+.card {
+  border: none;
+  transition: 0.3s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+}
+
+/* ---- HIGHLIGHT ---- */
+.card-img-top {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ---- CARD ---- */
+.card {
+  height: 430px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* -------- CAROUSEL -------- */
+.carousel-section {
+  width: 100%;
+  padding: 80px 0;
+  background: #fafafa;
+}
+
+.swiper {
+  width: 90%;
+  max-width: 1200px;
+}
+
+.swiper-slide {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  transition: 0.35s ease;
+  cursor: pointer;
+}
+
+.swiper-slide img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 20px;
+  transition: 0.3s ease;
+}
+
+.swiper-slide:hover img {
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+/* Footer */
+footer {
+  padding: 50px;
+  background: #111;
+  color: white;
+  text-align: center;
+  margin-top: 60px;
+}
+</style>
+</head>
+
+<body>
+ <!-- Poppins -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="./images/logoserviam.png" alt="logo" width="30" height="30" class="me-2">
+    <b>NOIR.</b>
+</a>
+
+
+
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item"><a class="nav-link fw-semibold" href="index.html">Home</a></li>
+
+        <!-- Products Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link fw-semibold dropdown-toggle" href="#" data-bs-toggle="dropdown">Highlight</a>
+
+          <ul class="dropdown-menu shadow-sm">
+            <li><a class="dropdown-item" href="./Phase 1.html">Phase 1</a></li>
+            <li><a class="dropdown-item" href="./phase 2.html">Phase 2</a></li>
+            <li><a class="dropdown-item" href="./phase 3.html">Phase 3</a></li>
+            <li><a class="dropdown-item" href="./phase 4.html">Phase 4</a></li>
+            <li><a class="dropdown-item" href="./phase 5.html">Phase 5</a></li>
+            <li><a class="dropdown-item" href="./phase 6.html">Phase 6</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item"><a class="nav-link fw-semibold" href="./our creation.html">Our Creation</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="py-5" style="margin-top: 90px;">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <div class="col-md-6" data-aos="fade-right">
+        <p class="text-muted mb-1">Kelompok 7</p>
+        <h1 class="hero-title mb-3">Konflik Antara Pertumbuhan Ekonomi dan Kelestarian SDA di Indonesia</h1>
+        <p class="text-muted mb-4"> by : Ananda George Deva X3/02, Keira Adelyn Chou X3/19, Naomi Caralee Kosasih X3/25 </p>
+
+        <div class="d-flex gap-3">
+       <a class="btn btn-outline-dark px-4 py-2"
+   data-bs-toggle="modal"
+   data-bs-target="#videoModal">
+   Watch Now
+</a>
+
+        </div>
+      </div>
+
+      <div class="col-md-6 text-center" data-aos="zoom-in">
+        <img src="./images/heropage index.jpeg" class="hero-img hero-slide">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCT SECTION -->
+<section class="py-5 bg-light">
+  <div class="container">
+
+    <h2 class="fw-bold mb-4" data-aos="fade-up">Highlights</h2>
+
+    <div class="row g-4">
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="50">
+        <div class="card shadow-sm">
+          <img src="./images/pengantar.jpeg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="fw-bold">Pengantar Revolusi Industri</h5>
+            <p class="text-muted">Awal Mula Era Mesin</p>
+            <a href="./Phase 1.html" class="btn btn-dark">Explore Here!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="150">
+        <div class="card shadow-sm">
+          <img src="./images/perkembangan.jpeg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="fw-bold">Perkembangan Revolusi Industri 1.0 – 4.0</h5>
+            <p class="text-muted">Perjalanan Inovasi Empat Generasi</p>
+            <a href="./phase 2.html" class="btn btn-dark">Explore Here!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="250">
+        <div class="card shadow-sm">
+          <img src="./images/konflik.jpeg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="fw-bold">Pengaruh Revolusi Industri terhadap Masyarakat Indonesia</h5>
+            <p class="text-muted">Bagaimana Teknologi Mengubah Langkah Hidup Kita</p>
+            <a href="./product 3.html" class="btn btn-dark">Explore Here!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="350">
+        <div class="card shadow-sm">
+          <img src="./images/pelanggaran.jpeg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="fw-bold">Pelanggaran dalam Industrialisasi</h5>
+            <p class="text-muted">Tantangan Etis dan Hukum di Dunia Industri</p>
+            <a href="./product 4.html" class="btn btn-dark">Explore Here!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="450">
+        <div class="card shadow-sm">
+          <img src="./images/kelestarian sda.jpeg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="fw-bold">Konflik Pertumbuhan Ekonomi vs Kelestarian SDA di Indonesia</h5>
+            <p class="text-muted">Menghadapi Ideologi dan Gaya Hidup Modern</p>
+            <a href="./phase 5.html" class="btn btn-dark">Explore Here!</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="550">
+        <div class="card shadow-sm">
+          <img src="./images/media sosial.jpeg" class="card-img-top">
+          <div class="card-body">
+            <h5 class="fw-bold">Prinsip Kebaikan Bersama dalam Industrialisasi Berkelanjutan</h5>
+            <p class="text-muted">Bonum Commune</p>
+            <a href="./phase 6.html" class="btn btn-dark">Explore Here!</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CAROUSEL -->
+<section class="carousel-section" data-aos="fade-up">
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide"><img src="./images/carousel index 1.jpeg"></div>
+      <div class="swiper-slide"><img src="./images/carousel index 2.jpeg"></div>
+      <div class="swiper-slide"><img src="./images/carousel index 3.jpeg"></div>
+      <div class="swiper-slide"><img src="./images/carousel index 4.jpeg"></div>
+      <div class="swiper-slide"><img src="./images/carousel index 5.jpeg"></div>
+      <div class="swiper-slide"><img src="./images/carousel index 6.jpeg"></div>
+      <div class="swiper-slide"><img src="./images/carousel index 7.jpeg"></div>
+      <div class="swiper-slide"><img src="./images/carousel index 8.jpeg"></div>
+      <div class="swiper-slide"><img src="./images/carousel index 9.jpeg"></div>
+      <div class="swiper-slide"><img src="./images/carousel index 10.jpeg"></div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Video</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <video id="localVideo" width="100%" controls>
+          <source src="./images/video revolu.mp4" type="video/mp4">
+        </video>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<!-- FOOTER -->
+<footer>
+  © 2025 NOIR. — All Rights Reserved
+</footer>
+
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>AOS.init();</script>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 20,
+  loop: true,
+  autoplay: { delay: 1800, disableOnInteraction: false },
+  speed: 900,
+  breakpoints: {
+    0: { slidesPerView: 1 },
+    600: { slidesPerView: 2 },
+    1000: { slidesPerView: 3 }
+  }
+});
+
+  const modal = document.getElementById('videoModal');
+  const video = document.getElementById('localVideo');
+
+  modal.addEventListener('hidden.bs.modal', () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+</script>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
