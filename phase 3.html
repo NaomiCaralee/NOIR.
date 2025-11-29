@@ -23,7 +23,7 @@
       height: 100%;
       margin: 0;
       padding: 0;
-      background-image: url('./images/bg\ nyoba.jpg');
+      background-image: url('bg nyoba.jpg');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -218,7 +218,7 @@
 <nav class="navbar navbar-expand-lg fixed-top shadow-sm bg-white">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="#">
-    <img src="./images/logoserviam.png" alt="logo" width="30" height="30" class="me-2">
+    <img src="logoserviam.png" alt="logo" width="30" height="30" class="me-2">
     <b>NOIR.</b>
 </a>
 
@@ -266,7 +266,7 @@
 
     <div class="col-md-5 text-center">
       <div class="shape-polygon">
-        <img src="./images/heropage phase 3.jpg" style="width:100%;">
+        <img src="heropage phase 3.jpg" style="width:100%;">
       </div>
     </div>
   </div>
@@ -284,12 +284,12 @@
     <div class="timeline">
         <!--  Urbanisasi -->
         <div class="timeline-item left">
-            <img src="./images/urbanisasi.jpg" alt="Urbanisasi">
+            <img src="urbanisasi.jpg" alt="Urbanisasi">
             <div class="content">
                 <h3><span style="color:var(--soft-brown)"><b>Urbanisasi</b></span></h3>
                 <p class="lead fw-semibold">Perpindahan besar-besaran dari desa ke kota.</p>
 
-                <button class="toggle-btn">Lihat lebih banyak ▼</button>
+                <button class="toggle-btn">See more! ▼</button>
 
                 <div class="extra-info">
                     <p>Menyebabkan:</p>
@@ -305,12 +305,12 @@
 
         <!-- Perubahan pekerjaan -->
         <div class="timeline-item right">
-            <img src="./images/pergnantian pekerjaan.jpg" alt="Perubahan pekerjaan">
+            <img src="pergnantian pekerjaan.jpg" alt="Perubahan pekerjaan">
             <div class="content">
                 <h3><span style="color:var(--soft-brown)"><b>Perubahan Pekerjaan</b></span></h3>
                 <p class="lead fw-semibold">Peralihan jenis-jenis pekerjaan dari kerja berbasis tenaga fisik menuju pekerjaan yang menekankan keterampilan dan pengetahuan.</p>
 
-                <button class="toggle-btn">Lihat lebih banyak ▼</button>
+                <button class="toggle-btn">See more! ▼</button>
 
                 <div class="extra-info">
                     <p>Menyebabkan:</p>
@@ -326,12 +326,12 @@
 
         <!--  Konsumerisme -->
         <div class="timeline-item left">
-            <img src="./images/konsumerisme.jpg" alt="Konsumerisme">
+            <img src="konsumerisme.jpg" alt="Konsumerisme">
             <div class="content">
                 <h3><span style="color:var(--soft-brown)"><b>Konsumerisme</b></span></h3>
                 <p class="lead fw-semibold">Pola hidup yang memprioritaskan pembelian barang melebihi kebutuhan dasar.</p>
 
-                <button class="toggle-btn">Lihat lebih banyak ▼</button>
+                <button class="toggle-btn">See more! ▼</button>
 
                 <div class="extra-info">
                     <p>Menyebabkan:</p>
@@ -347,12 +347,12 @@
 
         <!--  Globalisasi budaya -->
         <div class="timeline-item right">
-            <img src="./images/globalisasi budaya.jpg" alt="Globalisasi budaya">
+            <img src="globalisasi budaya.jpg" alt="Globalisasi budaya">
             <div class="content">
                 <h3><span style="color:var(--soft-brown)"><b>Globalisasi Budaya</b></span></h3>
                 <p class="lead fw-semibold">Masuknya budaya luar yang mempengaruhi gaya hidup masyarakat Indonesia.</p>
 
-                <button class="toggle-btn">Lihat lebih banyak ▼</button>
+                <button class="toggle-btn">See more! ▼</button>
 
                 <div class="extra-info">
                     <p>Menyebabkan:</p>
@@ -368,12 +368,12 @@
 
         <!--  Perubahan cara berpikir -->
         <div class="timeline-item left">
-            <img src="./images/perubahan car aberpikir.jpg" alt="Teknologi dan media">
+            <img src="perubahan car aberpikir.jpg" alt="Teknologi dan media">
             <div class="content">
                 <h3><span style="color:var(--soft-brown)"><b>Teknologi & Media Mengubah Cara Berpikir</b></span></h3>
                 <p class="lead fw-semibold">Perkembangan digital mengubah cara manusia belajar, berpendapat, berinteraksi dan bersosialisasi.</p>
 
-                <button class="toggle-btn">Lihat lebih banyak ▼</button>
+                <button class="toggle-btn">See more! ▼</button>
 
                 <div class="extra-info">
                     <p>Menyebabkan:</p>
@@ -389,12 +389,12 @@
 
         <!--  Tekanan SDA -->
         <div class="timeline-item right">
-            <img src="./images/eksploitasi sda.jpg" alt="Tekanan SDA">
+            <img src="eksploitasi sda.jpg" alt="Tekanan SDA">
             <div class="content">
                 <h3><span style="color:var(--soft-brown)"><b>Pola Konsumsi Meningkat</b></span></h3>
                 <p class="lead fw-semibold">Kebutuhan masyarakat naik seiring modernisasi dan kemudahan akses produk.</p>
 
-                <button class="toggle-btn">Lihat lebih banyak ▼</button>
+                <button class="toggle-btn">See more! ▼</button>
 
                 <div class="extra-info">
                     <p>Menyebabkan:</p>
@@ -419,11 +419,11 @@ buttons.forEach((btn) => {
         const extraInfo = btn.nextElementSibling;
         const isOpen = extraInfo.style.display === "block";
         document.querySelectorAll(".extra-info").forEach(i => i.style.display = "none");
-        document.querySelectorAll(".toggle-btn").forEach(b => b.innerText = "Lihat lebih banyak ▼");
+        document.querySelectorAll(".toggle-btn").forEach(b => b.innerText = "See more! ▼");
 
         if (!isOpen) {
             extraInfo.style.display = "block";
-            btn.innerText = "Sembunyikan ▲";
+            btn.innerText = "Hide ▲";
         }
     });
 });
